@@ -16,7 +16,8 @@
         "main": "portfolio/src/main.ts",
         "configFile": "portfolio/vite.config.ts",
         "outputPath": "dist/portfolio/client",
-        "tsConfig": "portfolio/tsconfig.app.json"
+        "tsConfig": "portfolio/tsconfig.app.json",
+        "styles": ["node_modules/line-awesome/dist/line-awesome/css/line-awesome.min.css"]
       },
       "defaultConfiguration": "production",
       "configurations": {

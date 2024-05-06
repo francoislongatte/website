@@ -1,0 +1,38 @@
+// .grid {
+
+
+//     display: grid;
+//     gap: 1.5vw;
+//     padding: 1vw;
+//     grid-template-columns: repeat(6, 1fr);
+//     grid-template-rows: auto;
+//     grid-template-areas:
+//       "hero hero hero hero aside2 aside2"
+//       "hero hero hero hero aside2 aside2"
+//       "hero hero hero hero aside2 aside2"
+//       "hero hero hero hero aside2 aside2"
+//       "aside3 aside3 aside4 aside4 aside5 aside5 ";
+//   }
+
+//   .item {
+//     border: 2px solid #464545;
+//     border-radius: 5px;
+//   }
+  
+// .item:nth-child(1) {
+//     grid-area: hero;
+//   }
+// .item:nth-child(2) {
+//     grid-area: aside2;
+//   }
+  
+//   .grid .item:nth-child(3) {
+//     grid-area: aside3;
+//   }
+//   .grid .item:nth-child(4) {
+//     grid-area: aside4;
+//   }
+  
+//   .grid .item:nth-child(5) {
+//     grid-area: aside5;
+//   }

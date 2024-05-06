@@ -1,0 +1,15 @@
+<box
+  class="grid-in-map flex flex-1 w-full h-full rounded-xl overflow-hidden !p-0"
+  routerLink="contact"
+>
+  <google-map height="168" width="100%" [options]="mapOptions">
+    <map-marker
+      *ngFor="let marker of markers"
+      [position]="marker.position"
+      [label]="marker.label"
+      [title]="marker.title"
+      [options]="marker.options"
+    >
+    </map-marker>
+  </google-map>
+</box>
