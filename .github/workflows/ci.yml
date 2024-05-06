@@ -12,7 +12,7 @@ jobs:
         with:
           fetch-depth: 0
       # Setup pnpm
-      - uses: pnpm/action-setup@v4
+      - uses: pnpm/action-setup@v3
         with:
           version: 9
       - name: Use Node.js 20
