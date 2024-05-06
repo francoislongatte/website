@@ -16,4 +16,4 @@ jobs:
         with:
           version: 9
       - run: pnpm install --frozen-lockfile
-      - run: pnpm nx build portfolio --verbose
+      - run: NODE_OPTIONS="--max-old-space-size=2000" pnpm nx build portfolio
