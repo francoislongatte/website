@@ -10,9 +10,6 @@ jobs:
   main:
     runs-on: ubuntu-latest
     steps:
-<<<<<<< Updated upstream
-      - run: echo "Hello GitHub Actions!"
-=======
       - run: echo "Hello GitHub Actions!"
     # Setup pnpm
       - uses: pnpm/action-setup@v2
@@ -20,4 +17,3 @@ jobs:
           version: 9
       - run: pnpm install --frozen-lockfile
       - run: pnpm nx build portfolio
->>>>>>> Stashed changes
