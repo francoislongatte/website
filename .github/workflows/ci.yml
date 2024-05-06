@@ -17,4 +17,4 @@ jobs:
         with:
           version: 9
       - run: pnpm install --frozen-lockfile
-      - run: pnpm nx build cart
+      - run: pnpm nx build portfolio
