@@ -21,4 +21,4 @@ jobs:
           node-version: 20
           cache: 'pnpm'
       - run: pnpm install
-      - run: pnpm nx run portfolio:build:production
+      - run: npx nx build portfolio
