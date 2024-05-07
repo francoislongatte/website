@@ -1,5 +1,5 @@
 FROM node:20.12.0-alpine
-COPY /dist /app
+COPY . /app
 
 WORKDIR /app
 
