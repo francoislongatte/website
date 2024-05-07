@@ -35,6 +35,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: Dist
+          path: .
         # Ajoutez une étape pour afficher le contenu de l'artefact téléchargé
       - name: Print artifact contents
         run: |
