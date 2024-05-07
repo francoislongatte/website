@@ -2,7 +2,9 @@
   "name": "@website/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "start": "node dist/portfolio/analog/server/index.mjs"
+  },
   "private": true,
   "dependencies": {
     "@analogjs/content": "^1.0.0-rc.0",
