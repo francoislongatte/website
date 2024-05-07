@@ -47,7 +47,7 @@ jobs:
       - name: Build Docker image
         uses: docker/build-push-action@v5
         with:
-          context: dist
+          context: "{{defaultContext}}:dist"
           file: ./dockerfile
           push: true
           tags: francoislongatte/portfolio:latest
