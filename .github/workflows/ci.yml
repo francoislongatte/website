@@ -35,6 +35,8 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: Dist
+      - name: Print artifact location
+        run: ls -R /github/workspace
       - name: Move artifact to Docker context
         run: mv /github/workspace/Dist ${{ github.workspace }}
       - uses: actions/checkout@v2
