@@ -35,10 +35,6 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: Dist
-      - name: Print current working directory
-        run: ls -R ${{ github.workspace }}
-      - name: Print artifact location
-        run: ls -R /github/workspace
       - name: Move artifact to Docker context
         run: mv /github/workspace/Dist ${{ github.workspace }}
       - uses: actions/checkout@v2
@@ -50,7 +46,7 @@ jobs:
       - name: Build Docker image
         uses: docker/build-push-action@v5
         with:
-          context: .
+          context: ${{ github.workspace }}
           file: ./dockerfile
           push: true
           tags: francoislongatte/portfolio:latest
