@@ -1,7 +1,7 @@
 FROM node:20.12.0-alpine
 
 WORKDIR /app
-COPY dist /app/dist
+COPY build/dist /app/dist
 
 COPY . .
 
