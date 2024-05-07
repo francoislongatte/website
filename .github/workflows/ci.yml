@@ -23,8 +23,8 @@ jobs:
       - run: pnpm install
       - run: NX_SKIP_NX_CACHE=true pnpm nx build portfolio
       - uses: actions/upload-artifact@v4
-        with:
-          name: build
+         with:
+          name: Build
           path: dist
   docker_build:
     runs-on: ubuntu-latest
