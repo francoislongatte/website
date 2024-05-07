@@ -25,7 +25,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         with:
           name: 'package'
-          path: '/'
+          path: 'path/to/artifact/'
   docker_build:
     runs-on: ubuntu-latest
     name: Docker Image Build
