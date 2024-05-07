@@ -1,10 +1,7 @@
 FROM node:20.12.0-alpine
 
-# Copie du reste des fichiers de votre projet dans l'image Docker
-COPY . .
-
 # Copie du contenu du dossier dist téléchargé depuis l'artefact "Dist" dans l'image Docker
-COPY portfolio /app/portfolio
+COPY . /app/portfolio
 
 WORKDIR /app
 
