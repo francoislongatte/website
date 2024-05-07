@@ -21,4 +21,4 @@ jobs:
           node-version: 20.12
           cache: 'pnpm'
       - run: pnpm install
-      - run: pnpm nx build portfolio --verbose  --loglevel debug
+      - run: NX_SKIP_NX_CACHE=true pnpm nx build portfolio
