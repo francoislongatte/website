@@ -31,7 +31,7 @@ export const routeMeta: RouteMeta = {
     <router-outlet></router-outlet>
   `,
   host:{
-    class:"w-dvw h-dvh flex place-items-center place-content-center"
+    class:"w-dvw h-dvh flex md:place-items-center place-items-start place-content-center"
   }
 })
 export class AppComponent {

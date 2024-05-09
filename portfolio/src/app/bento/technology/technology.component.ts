@@ -9,7 +9,7 @@ import { BoxComponent } from '../../common/box/box.component';
   templateUrl: './technology.component.html',
   styleUrl: './technology.component.scss',
   host:{
-    class: 'flex gap-4'
+    class: 'flex gap-4 flex-col lg:flex-row'
   }
 })
 export class TechnologyComponent {}

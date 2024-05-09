@@ -8,6 +8,9 @@ import { BoxComponent } from '../../common/box/box.component';
   imports: [CommonModule, BoxComponent],
   templateUrl: './name.component.html',
   styles: [],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  host:{
+    class: 'flex items-center justify-center flex-col text-center pt-8 pb-4'
+  }
 })
 export class NameComponent {}
