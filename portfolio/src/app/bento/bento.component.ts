@@ -35,7 +35,7 @@ import { TechnologyComponent } from "./technology/technology.component";
   styleUrl: "./bento.component.scss",
   host: {
     class:
-      "grid w-dvw top-0 gap-4 grid-areas-layoutMobile md:grid-areas-layout auto-cols-fr auto-rows-min p-[1vw] duration-300",
+      "grid w-dvw  top-0 gap-4 grid-areas-layoutMobile md:grid-areas-layout auto-cols-fr auto-rows-min p-[1vw] duration-300",
   },
 })
 export class BentoComponent {}
