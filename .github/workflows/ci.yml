@@ -11,8 +11,6 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      - name: Portainer Service Webhook
-        uses: newarifrh/portainer-service-webhook@v1
-        with:
-          webhook_url: ${{ secrets.WEBHOOK_URL }}
+      - name: Trigger Portainer stack webhook
+        run: curl -X POST ${{ secrets.WEBHOOK_URL }}
             
