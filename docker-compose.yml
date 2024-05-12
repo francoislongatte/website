@@ -4,5 +4,6 @@ services:
   portfolio:
     build: .
     command: npm run start
+    pull_policy: build
     ports:
       - 80:3000
