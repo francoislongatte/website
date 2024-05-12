@@ -11,23 +11,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
-      # Setup pnpm
-      - uses: pnpm/action-setup@v3
-        with:
-          version: 9
-      - name: Use Node.js 20
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20.12
-          cache: 'pnpm'
-      - run: pnpm install
-      - run: NX_SKIP_NX_CACHE=true pnpm nx build portfolio
-  deploy:
-    runs-on: ubuntu-latest
-    name: Continuous Deployment
-    needs: [docker_build]
-    steps:
-       - name: Invoke deployment hook
+      - name: Invoke deployment hook
           uses: distributhor/workflow-webhook@v3
           with:
             webhook_url: ${{ secrets.WEBHOOK_URL }}
