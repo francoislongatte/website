@@ -1,5 +1,4 @@
 import { injectContentFiles } from '@analogjs/content';
-import { RouteMeta } from '@analogjs/router';
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { BentoComponent } from '../bento/bento.component';

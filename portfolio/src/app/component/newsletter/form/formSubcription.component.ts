@@ -47,7 +47,7 @@ export class FormSubcriptionComponent {
         this.email.set("");
         timer(10000).subscribe(() => this.removeMessageSuccess());
       },
-      error: (err) => {
+      error: (err: any) => {
         this.errorMessage.set(err.error.message);
         timer(3000).subscribe(() => this.removeMessageError());
       },
