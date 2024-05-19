@@ -7,6 +7,9 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   templateUrl: './footer.component.html',
   styles: [],
-  changeDetection: ChangeDetectionStrategy.OnPush
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  host:{
+    class: 'fixed w-full bottom-0 mx-auto p-4'
+  }
 })
 export class FooterComponent {}

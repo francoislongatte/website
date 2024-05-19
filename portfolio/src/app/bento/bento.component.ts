@@ -1,10 +1,8 @@
 import { Component } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { RouterLink } from "@angular/router";
-import { FooterComponent } from "./footer/footer.component";
-import { BoxComponent } from "../common/box/box.component";
+import { BoxComponent } from "../component/box/box.component";
 import { ExperienceComponent } from "./experience/experience.component";
-import { NameComponent } from "./name/name.component";
 import { LinkedinComponent } from "./linkedin/linkedin.component";
 import { CalendarComponent } from "./calendar/calendar.component";
 import { MapComponent } from "./map/map.component";
@@ -19,10 +17,8 @@ import { TechnologyComponent } from "./technology/technology.component";
   imports: [
     CommonModule,
     RouterLink,
-    FooterComponent,
     BoxComponent,
     ProjectComponent,
-    NameComponent,
     LinkedinComponent,
     ExperienceComponent,
     CalendarComponent,
@@ -35,7 +31,7 @@ import { TechnologyComponent } from "./technology/technology.component";
   styleUrl: "./bento.component.scss",
   host: {
     class:
-      "grid w-dvw  top-0 gap-4 grid-areas-layoutMobile md:grid-areas-layout auto-cols-fr auto-rows-min p-[1vw] duration-300",
+      "container mx-auto grid w-full top-0 gap-4 grid-areas-layoutMobile md:grid-areas-layout auto-cols-fr auto-rows-min py-[1vw] duration-300",
   },
 })
 export class BentoComponent {}

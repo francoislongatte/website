@@ -1,13 +1,23 @@
+import { injectContentFiles } from '@analogjs/content';
+import { RouteMeta } from '@analogjs/router';
 import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
-import { injectContentFiles } from '@analogjs/content';
 import { BentoComponent } from '../bento/bento.component';
-
+import { FooterComponent } from '../component/footer/footer.component';
+import { NameComponent } from '../component/name/name.component';
+import { NewsletterComponent } from '../component/newsletter/newsletter.component';
 
 @Component({
   standalone: true,
-  imports: [BentoComponent],
-  template: `<bento />`,
+  imports: [NameComponent, BentoComponent, NewsletterComponent,  FooterComponent],
+  template: `
+    <div class="w-full">
+      <name />
+      <bento />
+      <newsletter />
+      <footer id="footer"></footer>
+    </div>
+  `,
 })
 export default class HomeComponent {
   constructor(private titleService: Title){

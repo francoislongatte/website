@@ -5,7 +5,7 @@ import {
   RouterModule,
   RouterOutlet,
 } from "@angular/router";
-import { FooterComponent } from "./bento/footer/footer.component";
+import { FooterComponent } from "./component/footer/footer.component";
 import { toSignal } from "@angular/core/rxjs-interop";
 import { RouteMeta } from "@analogjs/router";
 import { AsyncPipe, JsonPipe } from "@angular/common";
@@ -29,10 +29,7 @@ export const routeMeta: RouteMeta = {
   ],
   template: `
     <router-outlet></router-outlet>
-  `,
-  host:{
-    class:"w-dvw h-dvh flex md:place-items-center place-items-start place-content-center"
-  }
+  `
 })
 export class AppComponent {
   private readonly route = inject(Router);

@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BoxComponent } from '../../common/box/box.component';
+import { BoxComponent } from '../box/box.component';
 
 @Component({
   selector: 'name',

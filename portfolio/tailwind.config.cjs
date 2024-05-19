@@ -12,29 +12,17 @@ module.exports = {
     extend: {
       gridTemplateAreas: {
         layoutMobile: [
-          "name name",
           "exp technology",
           "calendar linkedin",
           "cv cv",
           "contact contact",
           " . .",
-          "footer footer"
         ],
         layout: [
-          "name name name name name name name name",
-          ". exp exp git . linkedin calendar .",
-          ". technology technology technology contact cv map .",
-          "footer footer footer footer footer footer footer footer",
+          "exp exp git . linkedin calendar",
+          "technology technology technology contact cv map",
         ],
-      },
-      gridTemplateColumns: {
-        layoutMobile: "1fr",
-        layout: "1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr",
-      },
-      gridTemplateRows: {
-        layoutMobile: "1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr",
-        layout: "1fr 1fr 1fr 1fr",
-      },
+      }
     },
   },
   plugins: [

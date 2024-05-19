@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GoogleMapsModule } from '@angular/google-maps';
-import { BoxComponent } from '../../common/box/box.component';
+import { BoxComponent } from '../../component/box/box.component';
 
 @Component({
   selector: 'map',
