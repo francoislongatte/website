@@ -31,7 +31,7 @@ import { TechnologyComponent } from "./technology/technology.component";
   styleUrl: "./bento.component.scss",
   host: {
     class:
-      "container mx-auto grid w-full top-0 gap-4 grid-areas-layoutMobile md:grid-areas-layout auto-cols-fr auto-rows-min py-[1vw] duration-300",
+      "container mx-auto grid w-full px-4 top-0 gap-4 grid-areas-layoutMobile md:grid-areas-layout auto-cols-fr auto-rows-min duration-300",
   },
 })
 export class BentoComponent {}

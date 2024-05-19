@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   styles: [''],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host:{
-    class: 'flex flex-col w-full border shadow-sm rounded-xl transition border-slate-200 p-4 md:p-5'
+    class: 'flex flex-col w-full border shadow-sm rounded-xl transition border-slate-200 p-4'
   }
 })
 export class BoxComponent {}

@@ -6,7 +6,6 @@ import { BentoComponent } from '../bento/bento.component';
 import { FooterComponent } from '../component/footer/footer.component';
 import { NameComponent } from '../component/name/name.component';
 import { NewsletterComponent } from '../component/newsletter/newsletter.component';
-
 @Component({
   standalone: true,
   imports: [NameComponent, BentoComponent, NewsletterComponent,  FooterComponent],

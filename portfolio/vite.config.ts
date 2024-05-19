@@ -9,7 +9,18 @@ export default defineConfig(({ mode }) => {
   return {
     root: __dirname,
     publicDir: "src/public",
-
+    optimizeDeps: {
+      include: [
+        '@angular/common',
+        '@angular/forms',
+        '@angular/platform-browser/animations',
+        '@ng-icons/core',
+        '@ng-icons/heroicons',
+      ],
+    },
+    ssr: {
+      noExternal: ['tailwindcss/**', '@ng-icons/core', '@ng-icons/heroicons']
+    },
     build: {
       outDir: "../dist/./portfolio/client",
       reportCompressedSize: true,

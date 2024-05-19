@@ -1,41 +1,24 @@
-<box class="relative col-span-4 col-start-3 rounded-xl p-5 sm:py-16 w-1/3 mx-auto">
+<box
+  class="relative lg:col-span-4 lg:col-start-3 col-span-8 col-start-1 rounded-xl px-5 py-16 w-1/3 mx-auto duration-300"
+>
   <div class="basis-8/12 mb-2 text-center">
     <h2 class="text-2xl font-bold md:text-3xl">Stay Ahead with me!</h2>
     <p class="mt-3 text-neutral-400">
       Subscribe to my newsletter and get the latest updates.
     </p>
-  </div> 
+  </div>
 
   <ul
-    class="basis-4/12 mb-8 list-none text-xs list-inside leading-6 text-neutral-400"
+    class="basis-4/12 mb-8 list-none text-xs text-center list-inside leading-6 text-neutral-400"
   >
-    <li class="flex items-center justify-center">
-        <ng-icon class="pr-4" name="heroCheckCircle"></ng-icon>Major news and trends in the world of Angular
+    <li>
+      <ng-icon class="align-middle pr-4" [svg]="heroCheckCircle"></ng-icon>Major news and
+      trends in the world of Angular
     </li>
-    <li class="flex items-center justify-center">
-        <ng-icon class="pr-4" name="heroCheckCircle"></ng-icon>Exclusive off-market opportunities in the Angular ecosystem
+    <li>
+      <ng-icon class="align-middle pr-4" name="heroCheckCircle"></ng-icon>Exclusive
+      off-market opportunities in the Angular ecosystem
     </li>
   </ul>
-  <form #emailForm="ngForm" (ngSubmit)="addEmail()">
-    <div
-      class="relative z-10 flex space-x-3 p-2 bg-white border rounded-lg shadow-lg shadow-gray-100"
-    >
-      <div class="flex-[1_0_0%]">
-        <input
-          type="email"
-          [(ngModel)]="email" name="email"
-          class="py-2.5 px-4 block w-full border-transparent rounded-lg focus:border-blue-500 focus:ring-blue-500"
-          placeholder="Email Address"
-        />
-      </div>
-      <div class="flex-[0_0_auto]">
-        <button
-          class="size-[46px] inline-flex justify-center items-center gap-x-2 text-sm font-semibold rounded-lg border border-transparent bg-blue-600 hover:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none"
-           type="submit"
-        >
-        <ng-icon class="text-white text-2xl" name="heroPaperAirplane"></ng-icon>
-      </button>
-      </div>
-    </div>
-  </form>
+  <form-subcription />
 </box>

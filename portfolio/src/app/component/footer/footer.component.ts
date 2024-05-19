@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   styles: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
   host:{
-    class: 'fixed w-full bottom-0 mx-auto p-4'
+    class: 'w-full bottom-0 mx-auto p-4'
   }
 })
 export class FooterComponent {}

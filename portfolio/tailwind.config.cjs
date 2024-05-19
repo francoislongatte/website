@@ -16,7 +16,6 @@ module.exports = {
           "calendar linkedin",
           "cv cv",
           "contact contact",
-          " . .",
         ],
         layout: [
           "exp exp git . linkedin calendar",
