@@ -1,6 +1,5 @@
-import { isPlatformBrowser } from "@angular/common";
-import { HttpClient, HttpHeaders } from "@angular/common/http";
-import { Injectable, PLATFORM_ID, inject } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Injectable, inject } from "@angular/core";
 import { Observable } from "rxjs";
 
 @Injectable({
