@@ -3,6 +3,7 @@
 import analog from "@analogjs/platform";
 import { defineConfig, Plugin, splitVendorChunkPlugin } from "vite";
 import { nxViteTsPaths } from "@nx/vite/plugins/nx-tsconfig-paths.plugin";
+import viteCompression from 'vite-plugin-compression';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -43,6 +44,7 @@ export default defineConfig(({ mode }) => {
 
       nxViteTsPaths(),
       splitVendorChunkPlugin(),
+      viteCompression()
     ],
     test: {
       globals: true,
