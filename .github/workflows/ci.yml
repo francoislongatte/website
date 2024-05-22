@@ -34,11 +34,6 @@ jobs:
           tags: francoislongatte/portfolio:latest
           secrets: |
             "BREVO_API_KEY=${{ secrets.BREVO_API_KEY }}"
-  deploy:
-    runs-on: ubuntu-latest
-    name: Continuous Deployment
-    needs: [build]
-    steps:
       - name: Deploy stack to Portainer
         uses: carlrygart/portainer-stack-deploy@v1
         with:
