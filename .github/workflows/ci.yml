@@ -41,12 +41,11 @@ jobs:
     needs: [build]
     steps:
       - name: Deploy stack to Portainer
-        uses: LGinC/portainer-stack-deploy@master
+        uses: carlrygart/portainer-stack-deploy@v1
         with:
           serverurl: ${{ secrets.PORTAINER_HOST }}
           username: ${{ secrets.PORTAINER_USERNAME }}
           password: ${{ secrets.PORTAINER_PASSWORD }}
-          endpointId: 2
-          stackname: 'portfolio'
-          imagenames: |
-            hub.docker.com/r/francoislongatte/portfolio:latest
+          stack-name: 'portfolio'
+          stack-definition: 'stack-definition.yml'
+          image: hub.docker.com/r/francoislongatte/portfolio:latest
