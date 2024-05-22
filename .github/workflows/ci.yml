@@ -38,7 +38,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     name: Continuous Deployment
-    needs: [docker_build]
+    needs: [build]
     steps:
       - name: Deploy stack to Portainer
         uses: LGinC/portainer-stack-deploy@master
