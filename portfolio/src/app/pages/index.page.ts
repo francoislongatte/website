@@ -9,7 +9,7 @@ import { NewsletterComponent } from '../component/newsletter/newsletter.componen
   standalone: true,
   imports: [NameComponent, BentoComponent, NewsletterComponent,  FooterComponent],
   template: `
-    <div class="w-full">
+    <div class="bg-orange-600 w-full">
       <name />
       <bento />
       <newsletter />
