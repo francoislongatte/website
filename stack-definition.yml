@@ -1,8 +1,0 @@
-version: '3.3'
-
-services:
-  server:
-    image: hub.docker.com/r/francoislongatte/portfolio:latest
-    deploy:
-      update_config:
-        order: start-first
