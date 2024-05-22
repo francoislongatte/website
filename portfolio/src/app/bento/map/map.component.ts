@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { GoogleMapsModule } from '@angular/google-maps';
 import { BoxComponent } from '../../component/box/box.component';
@@ -8,7 +8,8 @@ import { BoxComponent } from '../../component/box/box.component';
   standalone: true,
   imports: [CommonModule, GoogleMapsModule, BoxComponent],
   templateUrl: './map.component.html',
-  styles: []
+  styles: [],
+  changeDetection: ChangeDetectionStrategy.OnPush 
 })
 export class MapComponent {
   mapOptions: google.maps.MapOptions = {

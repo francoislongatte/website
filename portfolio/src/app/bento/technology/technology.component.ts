@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BoxComponent } from '../../component/box/box.component';
 
@@ -10,6 +10,7 @@ import { BoxComponent } from '../../component/box/box.component';
   styleUrl: './technology.component.scss',
   host:{
     class: 'flex gap-4 flex-col lg:flex-row'
-  }
+  },
+  changeDetection: ChangeDetectionStrategy.OnPush 
 })
 export class TechnologyComponent {}

@@ -36,8 +36,11 @@ export default defineConfig(({ mode }) => {
     plugins: [
       analog({
         prerender: {
+          routes: async () => [
+            '/'
+          ],
           sitemap: {
-            host: "https://yourdomain.com/", // Don't forget to update your domain!
+            host: "https://longatte.be/", // Don't forget to update your domain!
           },
         },
       }),
