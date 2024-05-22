@@ -46,7 +46,7 @@ jobs:
           serverurl: ${{ secrets.PORTAINER_HOST }}
           username: ${{ secrets.PORTAINER_USERNAME }}
           password: ${{ secrets.PORTAINER_PASSWORD }}
-          endpointId: 1
+          endpointId: 2
           stackname: 'portfolio'
           imagenames: |
             hub.docker.com/r/francoislongatte/portfolio:latest
