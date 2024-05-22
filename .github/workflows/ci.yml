@@ -34,12 +34,7 @@ jobs:
           tags: francoislongatte/portfolio:latest
           secrets: |
             "BREVO_API_KEY=${{ secrets.BREVO_API_KEY }}"
-      - name: Deploy stack to Portainer
-        uses: carlrygart/portainer-stack-deploy@v1
+      - name: Invoke deployment hook
+        uses: distributhor/workflow-webhook@v3
         with:
-          portainer-host: ${{ secrets.PORTAINER_HOST }}
-          username: ${{ secrets.PORTAINER_USERNAME }}
-          password: ${{ secrets.PORTAINER_PASSWORD }}
-          stack-name: 'portfolio'
-          stack-definition: 'docker-compose.yml'
-          image: hub.docker.com/r/francoislongatte/portfolio:latest
+          webhook_url: ${{ secrets.WEBHOOK_URL }}
