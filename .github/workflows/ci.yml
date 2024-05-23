@@ -34,7 +34,6 @@ jobs:
           tags: francoislongatte/portfolio:latest
           secrets: |
             "BREVO_API_KEY=${{ secrets.BREVO_API_KEY }}"
-            "KEY_ANALYTICS=${{ secrets.KEY_ANALYTICS }}"
       - name: Invoke deployment hook
         uses: distributhor/workflow-webhook@v3
         with:
