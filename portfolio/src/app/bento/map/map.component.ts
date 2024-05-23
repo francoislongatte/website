@@ -1,6 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { GoogleMapsModule } from '@angular/google-maps';
+import { ChangeDetectionStrategy, Component, Inject, PLATFORM_ID } from '@angular/core';
+import { CommonModule, isPlatformBrowser } from '@angular/common';
+import { GoogleMapsModule, GoogleMap } from '@angular/google-maps';
 import { BoxComponent } from '../../component/box/box.component';
 
 @Component({
