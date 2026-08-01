@@ -1,0 +1,33 @@
+---
+const items = [
+  {
+    title: 'Remarquablement rapide',
+    desc: 'Pas de thèmes lourds ni d’extensions superflues : chaque site est construit sur une base moderne et légère. Résultat : un chargement en moins d’une seconde, que Google récompense dans son classement.',
+  },
+  {
+    title: 'Conforme RGPD, dès la conception',
+    desc: 'Hébergement en Europe, aucun traceur inutile, bannière de consentement seulement quand elle est nécessaire, mentions légales et politique de confidentialité incluses.',
+  },
+  {
+    title: 'Un suivi humain',
+    desc: 'Vous parlez toujours à la même personne : celle qui a conçu votre site. Réponse personnelle dans un délai ultra rapide, jamais de ticket ni de réponse automatique.',
+  },
+];
+---
+
+<section class="g-sec g-pad" style="padding:0 32px 120px">
+  <div style="max-width:1120px;margin:0 auto">
+    <div class="reveal" style="max-width:620px;display:flex;flex-direction:column;gap:18px;margin-bottom:48px">
+      <span class="eyebrow">Engagements</span>
+      <h2 class="dsp d2" style="font-size:54px">Trois choses non négociables</h2>
+    </div>
+    <div class="g-3col g-tablet-1col">
+      {items.map((it) => (
+        <div class="glass reveal" style="padding:34px;display:flex;flex-direction:column;gap:14px">
+          <h3 class="dsp" style="font-size:23px">{it.title}</h3>
+          <p style="margin:0;font-size:15px;line-height:1.65;color:rgba(29,29,31,0.66)">{it.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

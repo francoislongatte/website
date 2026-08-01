@@ -1,0 +1,26 @@
+---
+const steps = [
+  { num: '01', title: 'Premier échange', desc: "Vous me décrivez votre activité et vos objectifs. Je vous dis franchement ce qui est utile, et ce qui ne l'est pas." },
+  { num: '02', title: 'Conception', desc: "Je dessine la structure et l'identité de vos pages, sur mesure — jamais un gabarit retouché." },
+  { num: '03', title: 'Mise en ligne', desc: 'Développement, tests sur mobile, référencement, conformité RGPD — puis publication.' },
+  { num: '04', title: 'Accompagnement', desc: "Le site vit : contenus, sécurité, évolutions. Vous m'écrivez, je m'en occupe." },
+];
+---
+
+<section class="g-sec g-pad" style="padding:0 32px 110px">
+  <div style="max-width:1120px;margin:0 auto;display:flex;flex-direction:column;gap:34px">
+    <div class="reveal" style="display:flex;flex-direction:column;gap:14px">
+      <span class="eyebrow">Déroulé</span>
+      <h2 class="dsp d2" style="font-size:44px;max-width:560px">Comment se passe un projet</h2>
+    </div>
+    <div class="g-4col">
+      {steps.map((st) => (
+        <div class="glass glass-lift reveal" style="padding:26px;display:flex;flex-direction:column;gap:10px;min-height:220px">
+          <span class="dsp" style="font-size:13px;letter-spacing:0.2em;opacity:0.55">{st.num}</span>
+          <h3 class="dsp" style="font-size:19px">{st.title}</h3>
+          <p style="margin:0;font-size:14px;line-height:1.6;color:rgba(29,29,31,0.62)">{st.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

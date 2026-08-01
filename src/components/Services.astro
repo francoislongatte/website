@@ -1,0 +1,22 @@
+---
+const services = [
+  { num: '01', title: 'Site vitrine', desc: "Présenter votre activité avec justesse — le socle d'une présence en ligne sérieuse." },
+  { num: '02', title: 'Refonte', desc: 'Moderniser un site vieillissant ou lent, en conservant votre référencement.' },
+  { num: '03', title: 'Sur mesure', desc: "Réservations, espaces clients, outils métier — quand le standard ne suffit plus." },
+];
+---
+
+<section id="services" class="g-sec g-pad" style="padding:0 32px 120px">
+  <div style="max-width:1120px;margin:0 auto">
+    <span class="eyebrow reveal" style="margin-bottom:34px">Services</span>
+    <div class="g-3col g-tablet-1col" style="margin-top:34px">
+      {services.map((svc) => (
+        <div class="glass glass-lift reveal" style="padding:32px;display:flex;flex-direction:column;gap:12px">
+          <span class="dsp" style="font-size:34px;color:rgba(29,29,31,0.28)">{svc.num}</span>
+          <h3 class="dsp" style="font-size:22px">{svc.title}</h3>
+          <p style="margin:0;font-size:14.5px;line-height:1.6;color:rgba(29,29,31,0.6)">{svc.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

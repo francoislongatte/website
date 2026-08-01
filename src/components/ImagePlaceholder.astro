@@ -1,0 +1,13 @@
+---
+interface Props {
+  label: string;
+  class?: string;
+  style?: string;
+}
+
+const { label, class: className = '', style = '' } = Astro.props;
+---
+
+<div class:list={['img-slot', className]} style={style}>
+  <span>{label}</span>
+</div>

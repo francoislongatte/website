@@ -1,11 +1,37 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import TopBar from '../components/TopBar.astro';
+import Hero from '../components/Hero.astro';
+import Stats from '../components/Stats.astro';
+import Confiance from '../components/Confiance.astro';
+import Formules from '../components/Formules.astro';
+import Services from '../components/Services.astro';
+import Deroule from '../components/Deroule.astro';
+import Engagements from '../components/Engagements.astro';
+import Faq from '../components/Faq.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import MobileBar from '../components/MobileBar.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const yearsExperience = new Date().getFullYear() - 2013;
 ---
 
-<Layout>
-	<Welcome />
+<Layout
+  title="Longatte — Sites vitrines sur mesure, remarquablement rapides"
+  description={`Création de sites web sur mesure et abonnement d'entretien sans tracas, par un artisan unique. Belgique — ${yearsExperience} ans d'expérience.`}
+>
+  <TopBar />
+  <main>
+    <Hero />
+    <Stats />
+    <Confiance />
+    <Formules />
+    <Services />
+    <Deroule />
+    <Engagements />
+    <Faq />
+    <Contact />
+  </main>
+  <Footer />
+  <MobileBar />
 </Layout>

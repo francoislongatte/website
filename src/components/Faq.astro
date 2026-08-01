@@ -1,0 +1,48 @@
+---
+const faqs = [
+  {
+    q: 'Combien de temps faut-il pour créer mon site ?',
+    a: "Comptez de quatre à huit semaines selon l'ampleur du projet, du premier échange à la mise en ligne. Vous recevez un planning clair dès le devis, et il est tenu.",
+  },
+  {
+    q: 'Pourquoi votre site serait-il plus rapide qu’un autre ?',
+    a: "Parce qu'il est construit sur mesure, sans thème préfabriqué ni extensions accumulées. Chaque page ne charge que ce dont elle a besoin — c'est une question de conception, pas de réglages.",
+  },
+  {
+    q: 'Suis-je propriétaire de mon site ?',
+    a: "Oui, entièrement. Le nom de domaine, le contenu et le site vous appartiennent. Si vous décidez un jour de partir, tout vous suit — sans frais cachés ni dépendance.",
+  },
+  {
+    q: 'Que comprend l’abonnement de maintenance ?',
+    a: "L'hébergement, la sécurité, les sauvegardes, la surveillance et les mises à jour de contenu chaque mois. Vous n'avez rien à gérer : vous m'écrivez, je m'en occupe.",
+  },
+  {
+    q: 'En quoi consiste l’offre réseaux sociaux ?',
+    a: "Je prends en charge l'animation de vos pages : deux publications par semaine, visuels cohérents avec votre site et votre ton. Les plateformes sont définies ensemble.",
+  },
+  {
+    q: 'Mon site sera-t-il conforme au RGPD ?',
+    a: "Oui, dès la mise en ligne : hébergement en Europe, aucun traceur inutile, consentement demandé uniquement quand la loi l'exige, mentions légales et politique de confidentialité rédigées.",
+  },
+];
+---
+
+<section id="faq" class="g-sec g-pad" style="padding:0 32px 120px">
+  <div style="max-width:1120px;margin:0 auto">
+    <div class="reveal" style="display:flex;flex-direction:column;gap:18px;margin-bottom:40px">
+      <span class="eyebrow">Questions fréquentes</span>
+      <h2 class="dsp d2" style="font-size:54px">Vous vous demandez peut-être&hellip;</h2>
+    </div>
+    <div class="glass reveal" style="padding:12px 30px">
+      {faqs.map((f) => (
+        <details class="faq-row" name="faq">
+          <summary class="faq-q">
+            <span class="dsp" style="font-size:18px;letter-spacing:-0.015em">{f.q}</span>
+            <span class="faq-sign" aria-hidden="true"></span>
+          </summary>
+          <p class="faq-a">{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

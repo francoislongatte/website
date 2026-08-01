@@ -1,0 +1,102 @@
+---
+import ImagePlaceholder from './ImagePlaceholder.astro';
+
+// Pas encore de visuel principal disponible : on masque le cadre pour l'instant.
+const showVisual = false;
+const yearsExperience = new Date().getFullYear() - 2013;
+---
+
+<section id="top" class="g-pad" style="padding:82px 32px 96px">
+  <div style="max-width:1000px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:28px;text-align:center">
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:10px">
+      <span class="eyebrow glass pill" style="padding:9px 18px"><span class="dot"></span>Disponible pour deux projets</span>
+      <span class="eyebrow glass pill" style="padding:9px 18px 9px 14px">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path
+            d="M12 2 4 5v6c0 5.2 3.4 9.9 8 11 4.6-1.1 8-5.8 8-11V5l-8-3Z"
+            stroke="#0fa07c"
+            stroke-width="2"
+            stroke-linejoin="round"
+          ></path>
+          <path d="m8.5 12 2.5 2.5 4.5-5" stroke="#0fa07c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        Conforme RGPD
+      </span>
+    </div>
+
+    <h1 class="dsp d1" style="font-size:88px;text-wrap:balance">Sur mesure.<br />Un artisan qui répond.</h1>
+
+    <p style="margin:0;max-width:600px;font-size:19px;line-height:1.6;color:rgba(29,29,31,0.62);text-wrap:pretty">
+      Conçu sur mesure, rapide et conforme RGPD, puis entretenu chaque mois &mdash; toujours par la même personne.
+    </p>
+
+    <form
+      id="hero-form"
+      class="g-form glass pill"
+      action="#contact"
+      method="get"
+      style="display:flex;align-items:center;gap:8px;padding:8px 8px 8px 22px;width:100%;max-width:470px"
+    >
+      <input
+        type="tel"
+        name="phone"
+        placeholder="Votre numéro de téléphone"
+        aria-label="Votre numéro de téléphone"
+        required
+        style="flex:1;min-width:0;padding:12px 0;font-size:15px;font-family:inherit;background:transparent;border:none;outline:none"
+      />
+      <button type="submit" class="btn-g">Être rappelé</button>
+    </form>
+    <p id="hero-form-success" class="glass" style="display:none;margin:0;padding:18px 26px;border-radius:999px;font-size:15px;color:#1d1d1f">
+      Merci &mdash; je vous rappelle personnellement dans un délai ultra rapide.
+    </p>
+
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px 26px;font-size:13.5px;color:rgba(29,29,31,0.5)">
+      <span>Délai ultra rapide</span><span>&middot;</span><span>Devis gratuit</span><span>&middot;</span><span>{yearsExperience} ans d'expérience</span>
+    </div>
+  </div>
+
+  {
+    showVisual && (
+      <div style="max-width:1180px;margin:64px auto 0">
+        <div id="hero-frame" class="glass" style="padding:14px;transform-origin:center top;will-change:transform">
+          <ImagePlaceholder
+            label="Visuel principal — un de vos sites, ou votre portrait"
+            class="g-heroimg"
+            style="width:100%;height:560px;border-radius:18px"
+          />
+        </div>
+      </div>
+    )
+  }
+</section>
+
+<script>
+  const form = document.getElementById('hero-form') as HTMLFormElement | null;
+  const success = document.getElementById('hero-form-success');
+
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    form.style.display = 'none';
+    if (success) success.style.display = 'block';
+  });
+
+  const frame = document.getElementById('hero-frame');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (frame && !reduce) {
+    let raf = 0;
+    const onScroll = () => {
+      if (raf) return;
+      raf = requestAnimationFrame(() => {
+        raf = 0;
+        const y = window.scrollY || 0;
+        const p = Math.min(1, Math.max(0, y / 620));
+        frame.style.transform = `scale(${0.9 + 0.1 * p})`;
+        frame.style.opacity = String(0.55 + 0.45 * p);
+      });
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+  }
+</script>

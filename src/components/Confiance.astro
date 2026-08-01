@@ -1,0 +1,37 @@
+---
+import { Image } from 'astro:assets';
+import banqueDeLuxembourg from '../assets/logos/banqueofluxembourg.svg';
+import fundChannel from '../assets/logos/fundchannel.png';
+import foyer from '../assets/logos/foyer.svg';
+import luxair from '../assets/logos/luxair.svg';
+import policeGrandDucale from '../assets/logos/logopoliceluxembourg.png';
+import postGroup from '../assets/logos/logo-postgroup.svg';
+import societeGenerale from '../assets/logos/societegeneral.svg';
+
+const logos = [
+  { name: 'Banque de Luxembourg', src: banqueDeLuxembourg },
+  { name: 'Fund Channel', src: fundChannel },
+  { name: 'Foyer', src: foyer },
+  { name: 'Luxair', src: luxair },
+  { name: 'Police Grand-Ducale', src: policeGrandDucale },
+  { name: 'Post Group', src: postGroup },
+  { name: 'Société Générale', src: societeGenerale },
+];
+---
+
+<section class="g-sec" style="padding:0 0 110px">
+  <div style="display:flex;flex-direction:column;gap:30px;align-items:center">
+    <span style="font-size:11.5px;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:rgba(29,29,31,0.42)">
+      Ils m'ont fait confiance
+    </span>
+    <div class="marquee" style="width:100%">
+      <div class="marquee-track">
+        {[...logos, ...logos].map((logo) => (
+          <div class="glass" style="flex:none;width:190px;height:84px;display:flex;align-items:center;justify-content:center;padding:20px">
+            <Image src={logo.src} alt={logo.name} style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain" />
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
