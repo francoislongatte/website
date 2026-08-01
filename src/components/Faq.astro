@@ -25,6 +25,19 @@ const faqs = [
     a: "Oui, dès la mise en ligne : hébergement en Europe, aucun traceur inutile, consentement demandé uniquement quand la loi l'exige, mentions légales et politique de confidentialité rédigées.",
   },
 ];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: f.a,
+    },
+  })),
+};
 ---
 
 <section id="faq" class="g-sec g-pad" style="padding:0 32px 120px">
@@ -45,4 +58,5 @@ const faqs = [
       ))}
     </div>
   </div>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />
 </section>

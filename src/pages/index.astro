@@ -14,6 +14,22 @@ import Footer from '../components/Footer.astro';
 import MobileBar from '../components/MobileBar.astro';
 
 const yearsExperience = new Date().getFullYear() - 2013;
+
+const businessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Longatte SRL',
+  image: new URL('/favicon/og-tile-512.png', Astro.site).toString(),
+  url: Astro.site?.toString(),
+  email: 'francois@longatte.be',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Attert',
+    addressCountry: 'BE',
+  },
+  areaServed: 'BE',
+  priceRange: '€€',
+};
 ---
 
 <Layout
@@ -34,4 +50,5 @@ const yearsExperience = new Date().getFullYear() - 2013;
   </main>
   <Footer />
   <MobileBar />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(businessSchema)} />
 </Layout>
