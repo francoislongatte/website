@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TopBar from '../components/TopBar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Politique de confidentialité — Longatte"
+  description="Politique de confidentialité de LONGATTE SRL : données collectées, finalités, durée de conservation et vos droits RGPD."
+>
+  <TopBar />
+  <main class="g-pad" style="padding:64px 32px 100px">
+    <div style="max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:32px">
+      <h1 class="dsp d2" style="font-size:44px">Politique de confidentialité</h1>
+
+      <section style="display:flex;flex-direction:column;gap:10px">
+        <h2 class="dsp" style="font-size:20px">Responsable du traitement</h2>
+        <p style="margin:0;font-size:15px;line-height:1.7;color:rgba(29,29,31,0.75)">
+          LONGATTE SRL (BE 1011.630.519), Rue du Koun 138, 6717 Attert, Belgique &mdash; <a href="mailto:francois@longatte.be" style="color:#1d1d1f">francois@longatte.be</a>.
+        </p>
+      </section>
+
+      <section style="display:flex;flex-direction:column;gap:10px">
+        <h2 class="dsp" style="font-size:20px">Données collectées</h2>
+        <p style="margin:0;font-size:15px;line-height:1.7;color:rgba(29,29,31,0.75)">
+          Lorsque vous utilisez le formulaire de contact ("Être rappelé" ou "Demander un devis"), nous collectons : votre nom (optionnel), votre
+          numéro de téléphone et/ou votre email, et la description de votre projet (optionnelle). Ces informations sont transmises à un
+          workflow d'automatisation (n8n) et stockées dans une base de données, l'un et l'autre hébergés sur notre propre serveur &mdash; aucune
+          donnée n'est transmise à un service tiers.
+        </p>
+      </section>
+
+      <section style="display:flex;flex-direction:column;gap:10px">
+        <h2 class="dsp" style="font-size:20px">Finalité et base légale</h2>
+        <p style="margin:0;font-size:15px;line-height:1.7;color:rgba(29,29,31,0.75)">
+          Ces données sont utilisées uniquement pour répondre à votre demande (rappel téléphonique ou devis). La base légale est l'exécution de
+          mesures précontractuelles prises à votre demande (article 6.1.b du RGPD).
+        </p>
+      </section>
+
+      <section style="display:flex;flex-direction:column;gap:10px">
+        <h2 class="dsp" style="font-size:20px">Durée de conservation</h2>
+        <p style="margin:0;font-size:15px;line-height:1.7;color:rgba(29,29,31,0.75)">
+          Vos données sont conservées 3 ans à compter de notre dernier échange, sauf si une relation contractuelle est établie entre nous, auquel
+          cas la durée de conservation applicable au contrat prévaut.
+        </p>
+      </section>
+
+      <section style="display:flex;flex-direction:column;gap:10px">
+        <h2 class="dsp" style="font-size:20px">Statistiques de visite</h2>
+        <p style="margin:0;font-size:15px;line-height:1.7;color:rgba(29,29,31,0.75)">
+          Ce site utilise GoatCounter, un outil d'analyse d'audience auto-hébergé, sans cookie et ne collectant aucune donnée personnelle
+          identifiable. Aucun consentement n'est donc requis pour cette mesure d'audience.
+        </p>
+      </section>
+
+      <section style="display:flex;flex-direction:column;gap:10px">
+        <h2 class="dsp" style="font-size:20px">Hébergement des données</h2>
+        <p style="margin:0;font-size:15px;line-height:1.7;color:rgba(29,29,31,0.75)">
+          L'ensemble des données est hébergé en Europe, sur un serveur loué chez Hetzner Online GmbH (Allemagne).
+        </p>
+      </section>
+
+      <section style="display:flex;flex-direction:column;gap:10px">
+        <h2 class="dsp" style="font-size:20px">Vos droits</h2>
+        <p style="margin:0;font-size:15px;line-height:1.7;color:rgba(29,29,31,0.75)">
+          Conformément au RGPD, vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation et d'opposition concernant vos
+          données. Pour exercer ces droits, contactez-nous à <a href="mailto:francois@longatte.be" style="color:#1d1d1f">francois@longatte.be</a>.
+          Vous pouvez également introduire une réclamation auprès de l'Autorité de protection des données belge (rue de la Presse 35, 1000
+          Bruxelles &mdash; <a
+            href="https://www.autoriteprotectiondonnees.be"
+            target="_blank"
+            rel="noopener"
+            style="color:#1d1d1f">autoriteprotectiondonnees.be</a>).
+        </p>
+      </section>
+    </div>
+  </main>
+  <Footer />
+</Layout>

@@ -1,0 +1,50 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TopBar from '../components/TopBar.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout title="Mentions légales — Longatte" description="Mentions légales de LONGATTE SRL, éditeur du site longatte.be.">
+  <TopBar />
+  <main class="g-pad" style="padding:64px 32px 100px">
+    <div style="max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:32px">
+      <h1 class="dsp d2" style="font-size:44px">Mentions légales</h1>
+
+      <section style="display:flex;flex-direction:column;gap:10px">
+        <h2 class="dsp" style="font-size:20px">Éditeur du site</h2>
+        <p style="margin:0;font-size:15px;line-height:1.7;color:rgba(29,29,31,0.75)">
+          LONGATTE, société à responsabilité limitée (SRL) de droit belge.<br />
+          Siège social : Rue du Koun 138, 6717 Attert (Nobressart), Belgique.<br />
+          Numéro d'entreprise (BCE) : BE 1011.630.519.<br />
+          Email : <a href="mailto:francois@longatte.be" style="color:#1d1d1f">francois@longatte.be</a><br />
+          Responsable de la publication : François Longatte.
+        </p>
+      </section>
+
+      <section style="display:flex;flex-direction:column;gap:10px">
+        <h2 class="dsp" style="font-size:20px">Hébergement</h2>
+        <p style="margin:0;font-size:15px;line-height:1.7;color:rgba(29,29,31,0.75)">
+          Ce site est hébergé par Hetzner Online GmbH, Industriestr. 25, 91710 Gunzenhausen, Allemagne.
+        </p>
+      </section>
+
+      <section style="display:flex;flex-direction:column;gap:10px">
+        <h2 class="dsp" style="font-size:20px">Propriété intellectuelle</h2>
+        <p style="margin:0;font-size:15px;line-height:1.7;color:rgba(29,29,31,0.75)">
+          L'ensemble des contenus présents sur ce site (textes, visuels, logo) est la propriété de LONGATTE SRL, sauf mention contraire. Toute
+          reproduction sans autorisation préalable est interdite.
+        </p>
+      </section>
+
+      <section style="display:flex;flex-direction:column;gap:10px">
+        <h2 class="dsp" style="font-size:20px">Données personnelles</h2>
+        <p style="margin:0;font-size:15px;line-height:1.7;color:rgba(29,29,31,0.75)">
+          Le traitement de vos données personnelles est détaillé dans notre <a
+            href="/politique-de-confidentialite"
+            style="color:#1d1d1f;text-decoration:underline;text-underline-offset:3px">politique de confidentialité</a>.
+        </p>
+      </section>
+    </div>
+  </main>
+  <Footer />
+</Layout>
