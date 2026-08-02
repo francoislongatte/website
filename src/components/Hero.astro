@@ -4,6 +4,26 @@ import ImagePlaceholder from './ImagePlaceholder.astro';
 // Pas encore de visuel principal disponible : on masque le cadre pour l'instant.
 const showVisual = false;
 const yearsExperience = new Date().getFullYear() - 2013;
+
+const countryCodes = [
+  {
+    code: '+32',
+    label: 'Belgique',
+    flag: `<svg width="18" height="13" viewBox="0 0 18 13"><rect width="6" height="13" fill="#000"/><rect x="6" width="6" height="13" fill="#FAE042"/><rect x="12" width="6" height="13" fill="#ED2939"/></svg>`,
+  },
+  {
+    code: '+352',
+    label: 'Luxembourg',
+    flag: `<svg width="18" height="13" viewBox="0 0 18 13"><rect width="18" height="4.33" fill="#ED2939"/><rect y="4.33" width="18" height="4.33" fill="#fff"/><rect y="8.66" width="18" height="4.34" fill="#00A1DE"/></svg>`,
+  },
+  {
+    code: '+33',
+    label: 'France',
+    flag: `<svg width="18" height="13" viewBox="0 0 18 13"><rect width="6" height="13" fill="#002395"/><rect x="6" width="6" height="13" fill="#fff"/><rect x="12" width="6" height="13" fill="#ED2939"/></svg>`,
+  },
+];
+
+const customFlag = `<svg width="18" height="13" viewBox="0 0 18 13"><rect width="18" height="13" rx="2" fill="none" stroke="rgba(29,29,31,0.4)" stroke-width="1.2"/><path d="M9 2v9M4.5 6.5h9" stroke="rgba(29,29,31,0.5)" stroke-width="1.2" stroke-linecap="round"/></svg>`;
 ---
 
 <section id="top" class="g-pad" style="padding:82px 32px 96px">
@@ -37,22 +57,139 @@ const yearsExperience = new Date().getFullYear() - 2013;
       method="get"
       style="display:flex;align-items:center;gap:8px;padding:8px 8px 8px 22px;width:100%;max-width:470px"
     >
+      <div class="cc-phone-row" style="display:flex;align-items:center;flex:1;min-width:0;width:100%">
+      <div style="position:relative;flex:none">
+        <button
+          type="button"
+          id="cc-toggle"
+          aria-haspopup="listbox"
+          aria-expanded="false"
+          style="display:flex;align-items:center;gap:6px;padding:12px 4px 12px 10px;background:transparent;border:none;font-size:15px;font-family:inherit;color:rgba(29,29,31,0.8);cursor:pointer"
+        >
+          <span id="cc-flag" set:html={countryCodes[0].flag} />
+          <span id="cc-code">{countryCodes[0].code}</span>
+        </button>
+        <input
+          type="text"
+          id="cc-custom"
+          placeholder="+..."
+          inputmode="tel"
+          style="display:none;flex:none;width:56px;padding:12px 0 12px 10px;font-size:15px;font-family:inherit;background:transparent;border:none;outline:none;color:rgba(29,29,31,0.8)"
+        />
+        <input type="hidden" id="cc-hidden" name="countryCode" value={countryCodes[0].code} />
+        <ul
+          id="cc-list"
+          role="listbox"
+          aria-label="Indicatif pays"
+          style="display:none;position:absolute;top:100%;left:0;margin:6px 0 0;padding:6px;list-style:none;background:#fff;border-radius:14px;box-shadow:0 14px 34px -14px rgba(23,26,38,0.4);z-index:10;min-width:150px"
+        >
+          {countryCodes.map((c) => (
+            <li
+              role="option"
+              data-code={c.code}
+              data-flag={c.flag}
+              style="display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;font-size:14px;cursor:pointer;white-space:nowrap"
+            >
+              <span set:html={c.flag} />
+              <span>{c.code}</span>
+              <span style="color:rgba(29,29,31,0.5)">{c.label}</span>
+            </li>
+          ))}
+          <li
+            role="option"
+            data-code="custom"
+            data-flag={customFlag}
+            style="display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;font-size:14px;cursor:pointer;white-space:nowrap"
+          >
+            <span set:html={customFlag} />
+            <span style="color:rgba(29,29,31,0.5)">Autre indicatif</span>
+          </li>
+        </ul>
+      </div>
       <input
         type="tel"
         name="phone"
         placeholder="Votre numéro de téléphone"
         aria-label="Votre numéro de téléphone"
+        inputmode="numeric"
+        pattern="[0-9]*"
         required
         style="flex:1;min-width:0;padding:12px 0;font-size:15px;font-family:inherit;background:transparent;border:none;outline:none"
       />
+      </div>
       <button type="submit" class="btn-g">Être rappelé</button>
     </form>
-    <p id="hero-form-success" class="glass" style="display:none;margin:0;padding:18px 26px;border-radius:999px;font-size:15px;color:#1d1d1f">
-      Merci &mdash; je vous rappelle personnellement dans un délai ultra rapide.
-    </p>
 
     <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:12px 26px;font-size:13.5px;color:rgba(29,29,31,0.65)">
       <span>Délai ultra rapide</span><span>&middot;</span><span>Devis gratuit</span><span>&middot;</span><span>{yearsExperience} ans d'expérience</span>
+    </div>
+  </div>
+
+  <div
+    id="lead-modal"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="lead-modal-title"
+    style="display:none;position:fixed;inset:0;z-index:100;align-items:center;justify-content:center;padding:20px"
+  >
+    <div id="lead-modal-backdrop" style="position:absolute;inset:0;background:rgba(23,26,38,0.12)"></div>
+    <div class="glass" style="position:relative;width:100%;max-width:460px;padding:34px;text-align:left;background:rgba(255,255,255,0.94)">
+      <button
+        type="button"
+        id="lead-modal-close"
+        aria-label="Fermer"
+        style="position:absolute;top:16px;right:16px;width:32px;height:32px;border:none;background:transparent;font-size:20px;color:rgba(29,29,31,0.5);cursor:pointer"
+      >
+        &times;
+      </button>
+      <h3 id="lead-modal-title" class="dsp" style="font-size:24px;margin:0 0 6px">Presque terminé</h3>
+      <p id="lead-modal-subtitle" style="margin:0 0 22px;font-size:14.5px;line-height:1.5;color:rgba(29,29,31,0.65)">
+        Encore quelques infos pour vous rappeler au mieux.
+      </p>
+      <form id="lead-form" style="display:flex;flex-direction:column;gap:14px">
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;color:rgba(29,29,31,0.65)">
+          Votre nom (optionnel)
+          <input
+            type="text"
+            name="nom"
+            style="padding:12px 14px;border-radius:12px;border:1px solid rgba(29,29,31,0.15);font-size:15px;font-family:inherit;background:rgba(255,255,255,0.7)"
+          />
+        </label>
+        <label id="lead-telephone-label" style="display:flex;flex-direction:column;gap:6px;font-size:13px;color:rgba(29,29,31,0.65)">
+          Téléphone
+          <input
+            id="lead-telephone"
+            type="tel"
+            name="telephone"
+            style="padding:12px 14px;border-radius:12px;border:1px solid rgba(29,29,31,0.15);font-size:15px;font-family:inherit;background:rgba(255,255,255,0.7)"
+          />
+        </label>
+        <label id="lead-email-label" style="display:flex;flex-direction:column;gap:6px;font-size:13px;color:rgba(29,29,31,0.65)">
+          Email
+          <input
+            id="lead-email"
+            type="email"
+            name="email"
+            style="padding:12px 14px;border-radius:12px;border:1px solid rgba(29,29,31,0.15);font-size:15px;font-family:inherit;background:rgba(255,255,255,0.7)"
+          />
+        </label>
+        <label style="display:flex;flex-direction:column;gap:6px;font-size:13px;color:rgba(29,29,31,0.65)">
+          Votre projet, en quelques mots (optionnel)
+          <textarea
+            name="description"
+            rows="3"
+            placeholder="Ex: refonte de mon site vitrine, prise de rendez-vous en ligne..."
+            style="padding:12px 14px;border-radius:12px;border:1px solid rgba(29,29,31,0.15);font-size:15px;font-family:inherit;background:rgba(255,255,255,0.7);resize:vertical"
+          ></textarea>
+        </label>
+        <p id="lead-form-error" style="display:none;margin:0;font-size:13px;color:#b3261e">
+          Un souci est survenu, réessayez ou écrivez-moi directement à francois@longatte.be.
+        </p>
+        <button type="submit" class="btn-g" style="margin-top:6px">Envoyer ma demande</button>
+      </form>
+      <p id="lead-form-success" class="glass" style="display:none;margin:0;padding:18px 22px;border-radius:16px;font-size:15px;color:#1d1d1f">
+        Merci &mdash; je reviens vers vous personnellement dans un délai ultra rapide.
+      </p>
     </div>
   </div>
 
@@ -73,12 +210,153 @@ const yearsExperience = new Date().getFullYear() - 2013;
 
 <script>
   const form = document.getElementById('hero-form') as HTMLFormElement | null;
-  const success = document.getElementById('hero-form-success');
+
+  const phoneInput = form?.elements.namedItem('phone') as HTMLInputElement | null;
+  phoneInput?.addEventListener('input', () => {
+    phoneInput.value = phoneInput.value.replace(/\D/g, '');
+  });
+
+  const ccToggle = document.getElementById('cc-toggle') as HTMLButtonElement | null;
+  const ccList = document.getElementById('cc-list');
+  const ccFlag = document.getElementById('cc-flag');
+  const ccCode = document.getElementById('cc-code');
+  const ccCustom = document.getElementById('cc-custom') as HTMLInputElement | null;
+  const ccHidden = document.getElementById('cc-hidden') as HTMLInputElement | null;
+  let savedFlag = ccFlag?.innerHTML ?? '';
+  let savedCode = ccCode?.textContent ?? '';
+
+  const closeCcList = () => {
+    ccList?.style.setProperty('display', 'none');
+    ccToggle?.setAttribute('aria-expanded', 'false');
+  };
+
+  ccToggle?.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = ccList?.style.display === 'block';
+    if (ccList) ccList.style.display = isOpen ? 'none' : 'block';
+    ccToggle.setAttribute('aria-expanded', String(!isOpen));
+  });
+
+  ccList?.querySelectorAll('li').forEach((li) => {
+    li.addEventListener('click', () => {
+      const code = li.getAttribute('data-code') ?? '';
+      const flag = li.getAttribute('data-flag') ?? '';
+
+      if (code === 'custom') {
+        if (ccToggle) ccToggle.style.display = 'none';
+        if (ccCustom) {
+          ccCustom.style.display = 'block';
+          ccCustom.value = '+';
+          ccCustom.focus();
+        }
+        if (ccHidden) ccHidden.value = '+';
+      } else {
+        if (ccCustom) ccCustom.style.display = 'none';
+        if (ccToggle) ccToggle.style.display = 'flex';
+        if (ccHidden) ccHidden.value = code;
+        if (ccCode) ccCode.textContent = code;
+        if (ccFlag) ccFlag.innerHTML = flag;
+        savedCode = code;
+        savedFlag = flag;
+      }
+      closeCcList();
+    });
+  });
+
+  ccCustom?.addEventListener('input', () => {
+    const digits = ccCustom.value.replace(/[^0-9]/g, '');
+    ccCustom.value = digits.length ? '+' + digits : '';
+
+    if (digits.length === 0) {
+      ccCustom.style.display = 'none';
+      if (ccToggle) ccToggle.style.display = 'flex';
+      if (ccCode) ccCode.textContent = savedCode;
+      if (ccFlag) ccFlag.innerHTML = savedFlag;
+      if (ccHidden) ccHidden.value = savedCode;
+    } else if (ccHidden) {
+      ccHidden.value = ccCustom.value;
+    }
+  });
+
+  document.addEventListener('click', closeCcList);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeCcList();
+  });
+
+  const modal = document.getElementById('lead-modal');
+  const modalBackdrop = document.getElementById('lead-modal-backdrop');
+  const modalClose = document.getElementById('lead-modal-close');
+  const modalTitle = document.getElementById('lead-modal-title');
+  const modalSubtitle = document.getElementById('lead-modal-subtitle');
+  const leadForm = document.getElementById('lead-form') as HTMLFormElement | null;
+  const leadFormError = document.getElementById('lead-form-error');
+  const leadFormSuccess = document.getElementById('lead-form-success');
+  const leadTelephone = document.getElementById('lead-telephone') as HTMLInputElement | null;
+  const leadEmail = document.getElementById('lead-email') as HTMLInputElement | null;
+
+  const openModal = (mode: 'call' | 'devis', phone = '') => {
+    if (!modal || !leadForm) return;
+
+    leadForm.style.display = 'flex';
+    if (leadFormSuccess) leadFormSuccess.style.display = 'none';
+    if (leadFormError) leadFormError.style.display = 'none';
+    leadForm.reset();
+
+    if (leadTelephone) {
+      leadTelephone.value = phone;
+      leadTelephone.required = mode === 'call';
+    }
+    if (leadEmail) {
+      leadEmail.required = mode === 'devis';
+    }
+    if (modalTitle) modalTitle.textContent = mode === 'call' ? 'Presque terminé' : 'Demande de devis';
+    if (modalSubtitle) {
+      modalSubtitle.textContent =
+        mode === 'call' ? 'Encore quelques infos pour vous rappeler au mieux.' : 'Décrivez votre projet, je reviens vers vous rapidement.';
+    }
+
+    modal.style.display = 'flex';
+    (leadForm.elements.namedItem('nom') as HTMLInputElement)?.focus();
+  };
+
+  const closeModal = () => {
+    if (modal) modal.style.display = 'none';
+  };
 
   form?.addEventListener('submit', (e) => {
     e.preventDefault();
-    form.style.display = 'none';
-    if (success) success.style.display = 'block';
+    const countryCode = (form.elements.namedItem('countryCode') as HTMLSelectElement | null)?.value ?? '';
+    const phone = (form.elements.namedItem('phone') as HTMLInputElement | null)?.value ?? '';
+    openModal('call', `${countryCode} ${phone}`.trim());
+  });
+
+  document.addEventListener('open-lead-modal', () => openModal('devis'));
+
+  modalClose?.addEventListener('click', closeModal);
+  modalBackdrop?.addEventListener('click', closeModal);
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeModal();
+  });
+
+  leadForm?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = Object.fromEntries(new FormData(leadForm).entries());
+    if (leadFormError) leadFormError.style.display = 'none';
+
+    try {
+      const webhookUrl = import.meta.env.PUBLIC_LEADS_WEBHOOK_URL || 'https://n8n.longatte.be/webhook/portfolio-form-number';
+      const res = await fetch(webhookUrl, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      if (!res.ok) throw new Error('request_failed');
+
+      leadForm.style.display = 'none';
+      if (leadFormSuccess) leadFormSuccess.style.display = 'block';
+    } catch {
+      if (leadFormError) leadFormError.style.display = 'block';
+    }
   });
 
   const frame = document.getElementById('hero-frame');

@@ -534,13 +534,12 @@ input {
     flex-direction: column;
     padding: 8px !important;
   }
-  .g-form input,
-  .g-form button {
+  .g-form {
+    align-items: stretch;
+  }
+  .g-form > button {
     width: 100%;
     box-sizing: border-box;
-  }
-  .g-form input {
-    text-align: center;
   }
   .g-cle {
     grid-template-columns: 1fr;
