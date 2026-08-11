@@ -1,0 +1,54 @@
+---
+import LocalPage from '../components/LocalPage.astro';
+import { Image } from 'astro:assets';
+import emaSphere from '../assets/logos/EMAsphere.webp';
+import mainsys from '../assets/logos/mainsys.gif';
+
+const references = [
+  { name: 'EMASphere', src: emaSphere },
+  { name: 'Mainsys', src: mainsys },
+];
+---
+
+<LocalPage
+  pageTitle="Développeur web en Brabant Wallon — Longatte"
+  description="Création de sites vitrines sur mesure pour les indépendants et PME du Brabant Wallon : Louvain-la-Neuve, Wavre, Ottignies, Nivelles et environs."
+  eyebrow="Brabant Wallon"
+  title="Un développeur web présent régulièrement à Louvain-la-Neuve"
+  intro="En plus de mes racines en Province de Luxembourg, je passe régulièrement du temps du côté de Louvain-la-Neuve. Ce qui veut dire des rendez-vous possibles en personne, une bonne connaissance du bassin économique local, et la même réactivité qu'ailleurs."
+  villesLabel="Communes où j'interviens"
+  villes={['Louvain-la-Neuve', 'Ottignies', 'Wavre', 'Nivelles', 'Braine-l\'Alleud', 'Genappe', 'Jodoigne']}
+  whyTitle="Pourquoi passer par un développeur qui connaît la région ?"
+  whyItems={[
+    {
+      title: 'Des rendez-vous en personne, sans détour',
+      text: "Ma présence régulière à Louvain-la-Neuve permet de se voir facilement pour cadrer le projet, plutôt que de tout faire à distance.",
+    },
+    {
+      title: 'Un interlocuteur unique, du premier échange au suivi',
+      text: "Pas d'équipe commerciale puis technique séparée : c'est moi qui conçois votre site, et qui reste joignable ensuite.",
+    },
+    {
+      title: 'Une réactivité constante',
+      text: 'Que vous soyez à Wavre ou à Ottignies, la même exigence de délai ultra rapide s\'applique.',
+    },
+  ]}
+>
+  <section style="display:flex;flex-direction:column;gap:14px">
+    <h2 class="dsp" style="font-size:24px">Déjà accompagné dans la région</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:18px">
+      {
+        references.map((ref) => (
+          <div class="glass" style="padding:16px 20px;display:flex;align-items:center;justify-content:center;height:64px">
+            <Image
+              src={ref.src}
+              alt={ref.name}
+              width={200}
+              style="max-height:100%;max-width:140px;width:auto;height:auto;object-fit:contain"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</LocalPage>

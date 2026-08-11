@@ -1,0 +1,59 @@
+---
+import LocalPage from '../components/LocalPage.astro';
+import { Image } from 'astro:assets';
+import banqueDeLuxembourg from '../assets/logos/banqueofluxembourg.svg';
+import fundChannel from '../assets/logos/fundchannel.png';
+import foyer from '../assets/logos/foyer.svg';
+import luxair from '../assets/logos/luxair.svg';
+
+const references = [
+  { name: 'Banque de Luxembourg', src: banqueDeLuxembourg },
+  { name: 'Fund Channel', src: fundChannel },
+  { name: 'Foyer', src: foyer },
+  { name: 'Luxair', src: luxair },
+];
+---
+
+<LocalPage
+  pageTitle="Développeur web au Luxembourg — Longatte"
+  description="Création de sites vitrines sur mesure pour les indépendants et entreprises du Grand-Duché de Luxembourg. Expérience professionnelle chez Banque de Luxembourg, Fund Channel, Foyer, Luxair."
+  eyebrow="Grand-Duché de Luxembourg"
+  title="Un développeur web avec une vraie expérience au Luxembourg"
+  intro="Avant de me consacrer aux sites sur mesure, j'ai travaillé plusieurs années au Grand-Duché, notamment pour Fund Channel. J'y connais les usages professionnels, la proximité avec la Belgique ne pose pas de problème, et je me déplace facilement pour les rendez-vous."
+  villesLabel="Communes où j'interviens"
+  villes={['Luxembourg-Ville', 'Esch-sur-Alzette', 'Differdange', 'Dudelange', 'Strassen', 'Bertrange']}
+  villesNote="Et sur l'ensemble du Grand-Duché, quel que soit votre secteur."
+  whyTitle="Pourquoi passer par un développeur habitué au Luxembourg ?"
+  whyItems={[
+    {
+      title: 'Une expérience professionnelle vécue sur place',
+      text: "Pas une prospection à distance : j'ai été salarié au Luxembourg, j'en connais les codes professionnels.",
+    },
+    {
+      title: 'Une proximité géographique réelle',
+      text: 'Basé côté belge, à quelques dizaines de minutes de la frontière — les rendez-vous en personne restent simples à organiser.',
+    },
+    {
+      title: 'Un interlocuteur unique',
+      text: "C'est moi qui conçois votre site et qui reste votre point de contact ensuite, sans changement d'équipe.",
+    },
+  ]}
+>
+  <section style="display:flex;flex-direction:column;gap:14px">
+    <h2 class="dsp" style="font-size:24px">Une expérience passée chez</h2>
+    <div style="display:flex;flex-wrap:wrap;gap:18px">
+      {
+        references.map((ref) => (
+          <div class="glass" style="padding:16px 20px;display:flex;align-items:center;justify-content:center;height:64px">
+            <Image
+              src={ref.src}
+              alt={ref.name}
+              width={200}
+              style="max-height:100%;max-width:140px;width:auto;height:auto;object-fit:contain"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</LocalPage>

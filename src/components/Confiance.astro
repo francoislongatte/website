@@ -7,6 +7,8 @@ import luxair from '../assets/logos/luxair.svg';
 import policeGrandDucale from '../assets/logos/logopoliceluxembourg.png';
 import postGroup from '../assets/logos/logo-postgroup.svg';
 import societeGenerale from '../assets/logos/societegeneral.svg';
+import emaSphere from '../assets/logos/EMAsphere.webp';
+import mainsys from '../assets/logos/mainsys.gif';
 
 const logos = [
   { name: 'Banque de Luxembourg', src: banqueDeLuxembourg },
@@ -16,6 +18,8 @@ const logos = [
   { name: 'Police Grand-Ducale', src: policeGrandDucale },
   { name: 'Post Group', src: postGroup },
   { name: 'Société Générale', src: societeGenerale },
+  { name: 'EMASphere', src: emaSphere },
+  { name: 'Mainsys', src: mainsys },
 ];
 ---
 
@@ -28,7 +32,12 @@ const logos = [
       <div class="marquee-track">
         {[...logos, ...logos].map((logo) => (
           <div class="glass" style="flex:none;width:190px;height:84px;display:flex;align-items:center;justify-content:center;padding:20px">
-            <Image src={logo.src} alt={logo.name} style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain" />
+            <Image
+              src={logo.src}
+              alt={logo.name}
+              width={200}
+              style="max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain"
+            />
           </div>
         ))}
       </div>
