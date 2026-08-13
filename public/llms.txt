@@ -4,7 +4,9 @@
 
 Longatte conçoit des sites web sur mesure — remarquablement rapides, sans thème préfabriqué — pour des indépendants et PME. Pas d'équipe commerciale puis technique séparée : la même personne, François Longatte, conçoit le site et reste le point de contact ensuite.
 
-## Offre
+Basé à Attert (Province de Luxembourg, Belgique), avec une présence régulière à Louvain-la-Neuve. Déplacements possibles dans toute la Belgique, au Grand-Duché de Luxembourg et en région frontalière française.
+
+**Offre**
 
 - **Création — Site clé en main** : dès 2 500 €. Conception sur mesure sans gabarit, site rapide par conception, textes et structure pensés pour Google, conforme RGPD dès la mise en ligne, le client est propriétaire de son site.
 - **Maintenance — Sérénité technique** (mensuel, sur devis) : hébergement, sécurité, sauvegardes, mises à jour de contenu, interventions prioritaires.
@@ -12,7 +14,7 @@ Longatte conçoit des sites web sur mesure — remarquablement rapides, sans th�
 - **Les deux — Sérénité complète** (mensuel, sur devis, tarif préférentiel) : maintenance et réseaux sociaux réunis, une seule facture, un seul interlocuteur.
 - Délai de création : souvent 1 à 2 semaines quand le projet est déjà clair dès le départ, un peu plus s'il faut affiner le besoin en cours de route. Devis ferme transmis après un premier échange.
 
-## Questions fréquentes
+**Questions fréquentes**
 
 - **Combien de temps pour créer un site ?** Souvent 1 à 2 semaines si le projet est déjà clair, un peu plus s'il faut affiner le besoin en cours de route.
 - **Pourquoi ce site serait-il plus rapide qu'un autre ?** Construit sur mesure, sans thème préfabriqué ni extensions accumulées.
@@ -21,23 +23,21 @@ Longatte conçoit des sites web sur mesure — remarquablement rapides, sans th�
 
 ## Zones d'intervention
 
-Basé à Attert (Province de Luxembourg, Belgique), avec une présence régulière à Louvain-la-Neuve. Déplacements possibles dans toute la Belgique, au Grand-Duché de Luxembourg et en région frontalière française.
-
-- Province de Luxembourg (Arlon, Attert, Bastogne, Martelange, Virton...) : https://longatte.be/province-de-luxembourg
-- Brabant Wallon (Louvain-la-Neuve, Wavre, Ottignies, Nivelles...) : https://longatte.be/brabant-wallon
-- Liège (Liège, Seraing, Verviers, Huy...) : https://longatte.be/liege
-- Grand-Duché de Luxembourg (Luxembourg-Ville, Esch-sur-Alzette...) : https://longatte.be/luxembourg
-- Frontière française (Thionville, Longwy, Mont-Saint-Martin...) : https://longatte.be/frontiere-francaise
+- [Province de Luxembourg](https://longatte.be/province-de-luxembourg): Arlon, Attert, Bastogne, Martelange, Virton et environs.
+- [Brabant Wallon](https://longatte.be/brabant-wallon): Louvain-la-Neuve, Wavre, Ottignies, Nivelles et environs.
+- [Liège](https://longatte.be/liege): Liège, Seraing, Verviers, Huy et environs.
+- [Grand-Duché de Luxembourg](https://longatte.be/luxembourg): Luxembourg-Ville, Esch-sur-Alzette et environs.
+- [Frontière française](https://longatte.be/frontiere-francaise): Thionville, Longwy, Mont-Saint-Martin et environs.
 
 ## Pages
 
-- Accueil : https://longatte.be/
-- Mentions légales : https://longatte.be/mentions-legales
-- Politique de confidentialité : https://longatte.be/politique-de-confidentialite
-- Sitemap : https://longatte.be/sitemap-index.xml
+- [Accueil](https://longatte.be/)
+- [Mentions légales](https://longatte.be/mentions-legales)
+- [Politique de confidentialité](https://longatte.be/politique-de-confidentialite)
+- [Sitemap](https://longatte.be/sitemap-index.xml)
 
 ## Contact
 
-- Email : francois@longatte.be
-- LinkedIn : https://www.linkedin.com/in/fran%C3%A7ois-longatte/
-- Formulaire (rappel téléphonique ou demande de devis) : https://longatte.be/#top
+- [francois@longatte.be](mailto:francois@longatte.be)
+- [LinkedIn](https://www.linkedin.com/in/fran%C3%A7ois-longatte/)
+- [Formulaire](https://longatte.be/#top): rappel téléphonique ou demande de devis.
