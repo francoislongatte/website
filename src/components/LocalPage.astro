@@ -8,6 +8,11 @@ interface WhyItem {
   text: string;
 }
 
+interface FaqItem {
+  q: string;
+  a: string;
+}
+
 interface Props {
   pageTitle: string;
   description: string;
@@ -19,9 +24,53 @@ interface Props {
   villesNote?: string;
   whyTitle: string;
   whyItems: WhyItem[];
+  faqs?: FaqItem[];
 }
 
-const { pageTitle, description, eyebrow, title, intro, villesLabel, villes, villesNote, whyTitle, whyItems } = Astro.props;
+const { pageTitle, description, eyebrow, title, intro, villesLabel, villes, villesNote, whyTitle, whyItems, faqs = [] } = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+const homeURL = Astro.site?.toString() ?? 'https://longatte.be/';
+
+const professionalServiceSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: 'Longatte SRL',
+  url: canonicalURL,
+  email: 'francois@longatte.be',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Attert',
+    addressCountry: 'BE',
+  },
+  areaServed: villes.map((ville) => ({ '@type': 'City', name: ville })),
+  priceRange: '€€',
+};
+
+const breadcrumbSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Accueil', item: homeURL },
+    { '@type': 'ListItem', position: 2, name: eyebrow, item: canonicalURL },
+  ],
+};
+
+const faqSchema =
+  faqs.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqs.map((f) => ({
+          '@type': 'Question',
+          name: f.q,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: f.a,
+          },
+        })),
+      }
+    : null;
 ---
 
 <Layout title={pageTitle} description={description}>
@@ -66,6 +115,25 @@ const { pageTitle, description, eyebrow, title, intro, villesLabel, villes, vill
 
       <slot />
 
+      {
+        faqs.length > 0 && (
+          <section style="display:flex;flex-direction:column;gap:14px">
+            <h2 class="dsp" style="font-size:24px">Questions fréquentes</h2>
+            <div class="glass" style="padding:8px 26px">
+              {faqs.map((f) => (
+                <details class="faq-row" name={`faq-${eyebrow}`}>
+                  <summary class="faq-q">
+                    <span class="dsp" style="font-size:16px;letter-spacing:-0.015em">{f.q}</span>
+                    <span class="faq-sign" aria-hidden="true" />
+                  </summary>
+                  <p class="faq-a">{f.a}</p>
+                </details>
+              ))}
+            </div>
+          </section>
+        )
+      }
+
       <section class="glass reveal" style="padding:36px;display:flex;flex-direction:column;align-items:center;gap:14px;text-align:center">
         <h2 class="dsp" style="font-size:24px;margin:0">Un projet dans la région ?</h2>
         <p style="margin:0;max-width:480px;font-size:15px;line-height:1.6;color:rgba(29,29,31,0.68)">
@@ -76,4 +144,7 @@ const { pageTitle, description, eyebrow, title, intro, villesLabel, villes, vill
     </div>
   </main>
   <Footer />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(professionalServiceSchema)} />
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(breadcrumbSchema)} />
+  {faqSchema && <script type="application/ld+json" is:inline set:html={JSON.stringify(faqSchema)} />}
 </Layout>
