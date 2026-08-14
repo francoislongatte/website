@@ -44,7 +44,10 @@ const customFlag = `<svg width="18" height="13" viewBox="0 0 18 13"><rect width=
       </span>
     </div>
 
-    <h1 class="dsp d1" style="font-size:88px;text-wrap:balance">Un site sur mesure.<br />Un artisan qui répond.</h1>
+    <h1 class="dsp d1" style="font-size:88px;text-wrap:balance">
+      <span id="hero-word" style="display:inline-block;white-space:nowrap;transition:opacity 0.3s ease,transform 0.3s ease">Site</span> sur mesure.<br />Un artisan
+      qui répond.
+    </h1>
 
     <p style="margin:0;max-width:600px;font-size:19px;line-height:1.6;color:rgba(29,29,31,0.62);text-wrap:pretty">
       Conçu sur mesure, rapide et conforme RGPD, puis entretenu chaque mois &mdash; toujours par la même personne.
@@ -358,6 +361,41 @@ const customFlag = `<svg width="18" height="13" viewBox="0 0 18 13"><rect width=
       if (leadFormError) leadFormError.style.display = 'block';
     }
   });
+
+  const heroWord = document.getElementById('hero-word');
+  const heroWords = ['Site', 'App', 'Logiciel', 'Outil', 'Projet'];
+  const heroReduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (heroWord) {
+    const computed = window.getComputedStyle(heroWord);
+    const measurer = document.createElement('span');
+    measurer.style.cssText = 'position:absolute;top:-9999px;left:-9999px;visibility:hidden;white-space:nowrap';
+    measurer.style.font = computed.font;
+    measurer.style.letterSpacing = computed.letterSpacing;
+    document.body.appendChild(measurer);
+    let maxWidth = 0;
+    heroWords.forEach((w) => {
+      measurer.textContent = w;
+      maxWidth = Math.max(maxWidth, measurer.getBoundingClientRect().width);
+    });
+    measurer.remove();
+    heroWord.style.width = `${Math.ceil(maxWidth)}px`;
+    heroWord.style.textAlign = 'center';
+  }
+
+  if (heroWord && !heroReduce) {
+    let i = 0;
+    setInterval(() => {
+      i = (i + 1) % heroWords.length;
+      heroWord.style.opacity = '0';
+      heroWord.style.transform = 'translateY(4px)';
+      setTimeout(() => {
+        heroWord.textContent = heroWords[i];
+        heroWord.style.opacity = '1';
+        heroWord.style.transform = 'translateY(0)';
+      }, 300);
+    }, 2600);
+  }
 
   const frame = document.getElementById('hero-frame');
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
