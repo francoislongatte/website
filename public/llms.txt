@@ -34,6 +34,7 @@ Basé à Attert (Province de Luxembourg, Belgique), avec une présence réguliè
 - [Accueil](https://longatte.be/)
 - [Mentions légales](https://longatte.be/mentions-legales)
 - [Politique de confidentialité](https://longatte.be/politique-de-confidentialite)
+- [Conditions générales](https://longatte.be/conditions-generales)
 - [Sitemap](https://longatte.be/sitemap-index.xml)
 
 ## Contact
