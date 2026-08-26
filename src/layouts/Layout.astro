@@ -84,6 +84,23 @@ const ogImageURL = new URL('/favicon/og-tile-512.png', Astro.site);
         }
       });
     </script>
-    <script is:inline data-goatcounter="https://stats.longatte.be/count" async src="//stats.longatte.be/count.js"></script>
+    <script is:inline>
+      var _paq = (window._paq = window._paq || []);
+      _paq.push(['disableCookies']);
+      _paq.push(['trackPageView']);
+      _paq.push(['enableLinkTracking']);
+      (function () {
+        var u = 'https://analytics.longatte.be/';
+        _paq.push(['setTrackerUrl', u + 'matomo.php']);
+        // Site ID from the Matomo admin (Administration > Websites) — verify after setup.
+        _paq.push(['setSiteId', '1']);
+        var d = document,
+          g = d.createElement('script'),
+          s = d.getElementsByTagName('script')[0];
+        g.async = true;
+        g.src = u + 'matomo.js';
+        s.parentNode.insertBefore(g, s);
+      })();
+    </script>
   </body>
 </html>
